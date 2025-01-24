@@ -1,7 +1,39 @@
 
+import { useState } from 'react'
+import '../estilos/card.css'
+export const Card = ({imagen, titulo, descripcion, precio}) => {
 
-export const Card = () => {
+    const [added, setAdded] = useState(false)
   return (
-    <div>Card</div>
+    <div>Card
+
+        <div className="tarjeta">
+            <img src={imagen} alt="Imagen producto" className="tarjeta-imagen" />
+                <div className="tarjeta-contenido">
+                    <h3 className="tarjeta-titulo">{titulo}</h3>
+                    <p className="tarjeta-descripcion">{descripcion}</p>
+                    <p className="tarjeta-precio">{precio}</p>
+
+                    {added
+                    ?
+                    <button
+                        type="button"
+                        className="boton-quitar"
+                    
+                    >Quitar del Carrito</button>
+                    :
+                    <button
+                        type="button"
+                        className="boton-agregar"
+                    
+                    >Agregar al Carrito</button>
+
+                    }
+                </div>
+            </div>
+
+    </div>
+
+    
   )
 }

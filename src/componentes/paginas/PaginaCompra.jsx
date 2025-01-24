@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-
+import { Card } from "../Card"
 export const PaginaCompra = () => {
 
     const [productos, setProductos] = useState([])
@@ -15,9 +15,29 @@ export const PaginaCompra = () => {
         fetchStoreApi()
     }, [])
   return (
+<>
 
 
+   
+    <div>Pagina Compra
+    <hr/>
 
-    <div>Pagina Compra</div>
+
+    <Card> </Card>
+
+    {productos.map(producto => (
+        <Card
+          key={producto.id}
+          imagen={producto.image}
+          titulo={producto.title}
+          descripcion={producto.description}
+          precio={producto.price}
+
+          >
+        </Card>
+    ))}
+    </div>
+
+    </>
   )
 }
