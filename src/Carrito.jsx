@@ -1,5 +1,8 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes,Navigate } from "react-router-dom"
 import { NavBar } from "./componentes/NavBar"
+
+import { PaginaCompra } from "./componentes/paginas/PaginaCompra"
+import { PaginaCarro } from "./componentes/paginas/PaginaCarro"
 export const Carrito = () => {
   return (
     <>
@@ -13,6 +16,10 @@ export const Carrito = () => {
             <Route>
 
             </Route>
+
+            <Route path='/' element={<PaginaCompra></PaginaCompra>}></Route>
+            <Route path='/carrito' element={<PaginaCarro></PaginaCarro>}></Route>
+            <Route path='/*' element={<Navigate to='/' />}></Route>
         </Routes>
         </div>
     </>
