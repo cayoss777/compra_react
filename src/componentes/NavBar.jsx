@@ -1,5 +1,6 @@
 
-
+import { Badge } from "@mui/material"
+import { ShoppingCart } from "@mui/icons-material"
 export const NavBar = () => {
   return (
 
@@ -16,8 +17,10 @@ export const NavBar = () => {
           <a className="nav-link active" aria-current="page" href="#">Compras</a>
         </li>
       </ul>
-      <a className="nav-link active" aria-current="page" href="#">Incremento</a>
-
+      
+        <Badge badgeContent={4} color="primary">
+            <ShoppingCart color="action" />
+        </Badge>
     </div>
   </div>
 </nav>
