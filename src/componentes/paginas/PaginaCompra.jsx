@@ -27,6 +27,7 @@ export const PaginaCompra = () => {
 
     {productos.map(producto => (
         <Card
+        
           key={producto.id}
           imagen={producto.image}
           titulo={producto.title}

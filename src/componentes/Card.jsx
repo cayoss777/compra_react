@@ -4,6 +4,12 @@ import '../estilos/card.css'
 export const Card = ({imagen, titulo, descripcion, precio}) => {
 
     const [added, setAdded] = useState(false)
+    const clickQuitar=()=>{
+        setAdded(false)
+    }
+    const clickAgregar=()=>{
+        setAdded(true)
+    }
   return (
     <div>Card
 
@@ -19,12 +25,14 @@ export const Card = ({imagen, titulo, descripcion, precio}) => {
                     <button
                         type="button"
                         className="boton-quitar"
+                        onClick={clickQuitar}
                     
                     >Quitar del Carrito</button>
                     :
                     <button
                         type="button"
                         className="boton-agregar"
+                        onClick={clickAgregar}
                     
                     >Agregar al Carrito</button>
 
