@@ -3,9 +3,10 @@ import { NavBar } from "./componentes/NavBar"
 
 import { PaginaCompra } from "./componentes/paginas/PaginaCompra"
 import { PaginaCarro } from "./componentes/paginas/PaginaCarro"
+import { ProductosProvider } from "./context/ProductosProvider"
 export const Carrito = () => {
   return (
-    <>
+    <ProductosProvider>
         
             <div>
                 <h5>Carrito compra web con React</h5>
@@ -25,6 +26,6 @@ export const Carrito = () => {
             </Routes>
             </div>
         </div>
-    </>
+    </ProductosProvider>
   )
 }

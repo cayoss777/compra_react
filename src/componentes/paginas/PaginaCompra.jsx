@@ -1,19 +1,12 @@
-import { useEffect, useState } from "react"
+
+import { useContext } from "react"
 import { Card } from "../Card"
+import { ProductosContext } from "../../context/ProductosContext"
 export const PaginaCompra = () => {
 
-    const [productos, setProductos] = useState([])
+  //Llamar a Context
+const {productos} =useContext(ProductosContext)
 
-    const fetchStoreApi = async () => {
-        const response = await fetch('https://fakestoreapi.com/products')
-        const data = await response.json()
-        console.log(data)
-        setProductos(data)
-    }
-
-    useEffect(() => {
-        fetchStoreApi()
-    }, [])
   return (
 <>
 
